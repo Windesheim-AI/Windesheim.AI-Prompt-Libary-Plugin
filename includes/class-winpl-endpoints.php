@@ -11,6 +11,7 @@ class WinPL_Endpoints
     public function register_endpoints()
     {
         $endpoint_prefix = 'winpl/v1';
+        //prompts
         register_rest_route($endpoint_prefix, '/prompts', [
             'methods' => 'GET',
             'callback' => [$this, 'get_prompts'],
@@ -25,7 +26,18 @@ class WinPL_Endpoints
             'permission_callback' => function () {
                 return is_user_logged_in() && current_user_can('edit_posts');
             },
+        ]);
 
+        //prompt patterns
+        register_rest_route($endpoint_prefix, '/prompt-patterns', [
+            'methods' => 'GET',
+            'callback' => [$this, 'get_prompt_patterns'],
+        ]);
+
+        //sectors
+        register_rest_route($endpoint_prefix, '/sectors', [
+            'methods' => 'GET',
+            'callback' => [$this, 'get_sectors'],
         ]);
 
     }
@@ -130,5 +142,21 @@ class WinPL_Endpoints
         $prompt->promptPattern = $wpdb->get_var($wpdb->prepare("SELECT title FROM $prompt_pattern_table WHERE id = %d", $prompt->promptPattern));
         $prompt->sector = $wpdb->get_var($wpdb->prepare("SELECT title FROM $sector_table WHERE id = %d", $prompt->sector));
         return $prompt;
+    }
+
+    public function get_prompt_patterns()
+    {
+        global $wpdb;
+        $prompt_pattern_table = $wpdb->prefix . 'winpl_prompt_pattern';
+        $prompt_patterns = $wpdb->get_results("SELECT * FROM $prompt_pattern_table");
+        return $prompt_patterns;
+    }
+
+    public function get_sectors()
+    {
+        global $wpdb;
+        $sector_table = $wpdb->prefix . 'winpl_sector';
+        $sectors = $wpdb->get_results("SELECT * FROM $sector_table");
+        return $sectors;
     }
 }
