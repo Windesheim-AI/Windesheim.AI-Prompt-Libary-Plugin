@@ -82,47 +82,35 @@ class WinPL_Endpoints
     }
 
 
-    public function create_prompt()
+    public function create_prompt($request)
     {
-        $decoded_request = json_decode(file_get_contents('php://input'));
-
-        // Check if the request body is valid JSON
-        if ($decoded_request == null) {
+        $request = $request->get_body();
+        //check if the request body is valid JSON
+        if ($request == null) {
             return new WP_REST_Response('Invalid data given!', 400);
         }
-
-        // Sanitize and validate input data
-        $content = (object) [
-            'title' => sanitize_text_field($decoded_request->title),
-            'prompt' => sanitize_text_field($decoded_request->prompt),
-            'description' => sanitize_text_field($decoded_request->description),
-            'tool' => sanitize_text_field($decoded_request->tool),
-            'toolLink' => esc_url_raw($decoded_request->toolLink),
-            'promptPattern' => sanitize_text_field($decoded_request->promptPattern),
-            'sector' => sanitize_text_field($decoded_request->sector),
-        ];
-
-        // Check if the prompt pattern and sector are valid
+        //decode the request body
+        $content = json_decode($request);
+        //check if the request body contains all the required fields
+        if (!isset($content->title) || !isset($content->prompt) || !isset($content->description) || !isset($content->tool) || !isset($content->toolLink) || !isset($content->promptPattern) || !isset($content->sector)) {
+            return new WP_REST_Response('Invalid data given!', 400);
+        }
+        //check if the prompt pattern and sector are valid
         global $wpdb;
         $prompt_pattern_table = $wpdb->prefix . 'winpl_prompt_pattern';
         $sector_table = $wpdb->prefix . 'winpl_sector';
-
-        $prompt_pattern = $wpdb->get_var($wpdb->prepare("SELECT id FROM $prompt_pattern_table WHERE title = %s", $content->promptPattern));
-        $sector = $wpdb->get_var($wpdb->prepare("SELECT id FROM $sector_table WHERE title = %s", $content->sector));
-
+        $prompt_pattern = $wpdb->get_var("SELECT id FROM $prompt_pattern_table WHERE title = '$content->promptPattern'");
+        $sector = $wpdb->get_var("SELECT id FROM $sector_table WHERE title = '$content->sector'");
         if ($prompt_pattern == null || $sector == null) {
             return new WP_REST_Response('Invalid data given!', 400);
         }
-
-        // Check if the prompt already exists
+        //check if the prompt already exists
         $prompt_table = $wpdb->prefix . 'winpl_prompt';
-        $prompt = $wpdb->get_row($wpdb->prepare("SELECT * FROM $prompt_table WHERE title = %s", $content->title));
-
+        $prompt = $wpdb->get_row("SELECT * FROM $prompt_table WHERE title = '$content->title'");
         if ($prompt != null) {
             return new WP_REST_Response('Prompt already exists!', 400);
         }
-
-        // Insert the prompt into the database
+        //insert the prompt into the database
         $wpdb->insert(
             $prompt_table,
             array(
@@ -136,13 +124,11 @@ class WinPL_Endpoints
             ),
             array('%s', '%s', '%s', '%s', '%s', '%d', '%d')  // Adjust field types accordingly
         );
-
-        // Return the prompt
+        //return the new prompt
         $prompt_id = (int) $wpdb->insert_id;
         $prompt = $wpdb->get_row($wpdb->prepare("SELECT * FROM $prompt_table WHERE id = %d", $prompt_id));
         $prompt->promptPattern = $wpdb->get_var($wpdb->prepare("SELECT title FROM $prompt_pattern_table WHERE id = %d", $prompt->promptPattern));
         $prompt->sector = $wpdb->get_var($wpdb->prepare("SELECT title FROM $sector_table WHERE id = %d", $prompt->sector));
-
         return $prompt;
     }
 }
