@@ -1,1 +1,2 @@
 1.0.0 Initial release
+1.0.1 Add Manage page to add, edit and delete prompts

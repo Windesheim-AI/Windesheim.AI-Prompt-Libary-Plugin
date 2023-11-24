@@ -15,10 +15,16 @@ class WinPL_Endpoints
         register_rest_route($endpoint_prefix, '/prompts', [
             'methods' => 'GET',
             'callback' => [$this, 'get_prompts'],
+            'permission_callback' => function () {
+                return is_user_logged_in();
+            },
         ]);
         register_rest_route($endpoint_prefix, '/prompts/(?P<id>\d+)', [
             'methods' => 'GET',
             'callback' => [$this, 'get_prompt'],
+            'permission_callback' => function () {
+                return is_user_logged_in();
+            },
         ]);
         register_rest_route($endpoint_prefix, '/prompts', [
             'methods' => 'POST',
@@ -32,12 +38,18 @@ class WinPL_Endpoints
         register_rest_route($endpoint_prefix, '/prompt-patterns', [
             'methods' => 'GET',
             'callback' => [$this, 'get_prompt_patterns'],
+            'permission_callback' => function () {
+                return is_user_logged_in();
+            },
         ]);
 
         //sectors
         register_rest_route($endpoint_prefix, '/sectors', [
             'methods' => 'GET',
             'callback' => [$this, 'get_sectors'],
+            'permission_callback' => function () {
+                return is_user_logged_in();
+            },
         ]);
 
     }

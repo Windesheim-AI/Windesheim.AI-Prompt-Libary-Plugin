@@ -7,7 +7,7 @@
  * Description: Windesheim Prompt Libary 
  * Author: Windesheim
  * Author URI: https://windesheim.tech/
- * Version: 1.0.0
+ * Version: 1.0.1
  * Text Domain: windesheim-prompt-libary
  * Requires at least: 6.2
  * Tested up to: 6.4
@@ -18,7 +18,7 @@
  * @package  Windesheim Prompt Libary
  * @category Core
  * @author   Windesheim
- * @version  1.0.0
+ * @version  1.0.1
  */
 
 // Exit if accessed directly.
@@ -61,7 +61,7 @@ final class WindesheimPromptLibary
         }
 
         if (!defined('WindesheimPromptLibary_PLUGIN_VERSION')) {
-            define('WindesheimPromptLibary_PLUGIN_VERSION', '1.0.0');
+            define('WindesheimPromptLibary_PLUGIN_VERSION', '1.0.1');
         }
 
         if (!defined('WindesheimPromptLibary_PLUGIN_FILE')) {
@@ -76,6 +76,8 @@ final class WindesheimPromptLibary
     public function include(): void
     {
         require_once WindesheimPromptLibary_PLUGIN_DIR . 'includes/index.php';
+        require_once WindesheimPromptLibary_PLUGIN_DIR . 'pages/index.php';
+        require_once WindesheimPromptLibary_PLUGIN_DIR . 'utils/index.php';
     }
 
     /**
@@ -106,3 +108,14 @@ if (!function_exists('windesheim_prompt_libary')) {
 
 windesheim_prompt_libary();
 
+
+function winpl_enqueue_admin_scripts()
+{
+    wp_enqueue_script('thickbox');
+    wp_enqueue_style('thickbox');
+
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery-ui-sortable');
+}
+
+add_action('admin_enqueue_scripts', 'winpl_enqueue_admin_scripts');
