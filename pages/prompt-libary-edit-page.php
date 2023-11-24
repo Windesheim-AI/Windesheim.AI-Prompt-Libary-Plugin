@@ -253,7 +253,6 @@ function windesheim_prompt_libary_render_settings_page()
                 $(this).prop('disabled', true).html('<span class="spinner is-active"></span>');
 
                 $.post(ajaxurl, data, function (response) {
-                    $('.wingai_save_course').prop('disabled', false).html('Delete');
                     location.reload();
                 });
             });
@@ -270,7 +269,6 @@ function windesheim_prompt_libary_render_settings_page()
                     $(this).prop('disabled', true).html('<span class="spinner is-active"></span>');
 
                     $.post(ajaxurl, data, function (response) {
-                        $('.wingai_save_course').prop('disabled', false).html('Delete');
                         location.reload();
                     });
                 }

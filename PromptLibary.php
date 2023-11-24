@@ -95,7 +95,7 @@ final class WindesheimPromptLibary
 
 if (!function_exists('windesheim_prompt_libary')) {
     /**
-     * Returns instance of the main WingAI class
+     * Returns instance of the main WindesheimPromptLibary class
      *
      * @return WindesheimPromptLibary
      * @throws Exception
