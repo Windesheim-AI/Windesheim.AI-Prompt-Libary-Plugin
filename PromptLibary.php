@@ -7,7 +7,7 @@
  * Description: Windesheim Prompt Libary 
  * Author: Windesheim
  * Author URI: https://windesheim.tech/
- * Version: 1.0.1
+ * Version: 1.0.2
  * Text Domain: windesheim-prompt-libary
  * Requires at least: 6.2
  * Tested up to: 6.4
@@ -18,7 +18,7 @@
  * @package  Windesheim Prompt Libary
  * @category Core
  * @author   Windesheim
- * @version  1.0.1
+ * @version  1.0.2
  */
 
 // Exit if accessed directly.
@@ -61,7 +61,7 @@ final class WindesheimPromptLibary
         }
 
         if (!defined('WindesheimPromptLibary_PLUGIN_VERSION')) {
-            define('WindesheimPromptLibary_PLUGIN_VERSION', '1.0.1');
+            define('WindesheimPromptLibary_PLUGIN_VERSION', '1.0.2');
         }
 
         if (!defined('WindesheimPromptLibary_PLUGIN_FILE')) {
@@ -70,6 +70,10 @@ final class WindesheimPromptLibary
 
         if (!defined('WindesheimPromptLibary_PLUGIN_BASENAME')) {
             define('WindesheimPromptLibary_PLUGIN_BASENAME', plugin_basename(__FILE__));
+        }
+
+        if (!defined('WindesheimPromptLibary_API_VERSION')) {
+            define('WindesheimPromptLibary_API_VERSION', '1.0.0');
         }
     }
 
