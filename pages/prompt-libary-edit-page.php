@@ -61,6 +61,7 @@ function windesheim_prompt_libary_render_settings_page()
                     <th scope="col" id="toolLink" class="manage-column column-toolLink">Tool Link</th>
                     <th scope="col" id="promptPattern" class="manage-column column-promptPattern">Prompt Pattern</th>
                     <th scope="col" id="sector" class="manage-column column-sector">Sector</th>
+                    <th scope="col" id="imageLink" class="manage-column column-imageLink">Image Link</th>
                 </tr>
             </thead>
 
@@ -108,7 +109,9 @@ function windesheim_prompt_libary_render_settings_page()
                         </td>
                         <td class="sector column-sector" data-colname="Sector">
                             <?php echo $prompt->sector; ?>
-
+                        </td>
+                        <td class="imageLink column-imageLink" data-colname="Sector">
+                          <?php echo $prompt->imageLink; ?>
                         </td>
                     </tr>
                     <?php
@@ -156,6 +159,13 @@ function windesheim_prompt_libary_render_settings_page()
                     <br />
                     <input type="url" class="form-control" id="edit_prompt_toolLink" name="edit_prompt_toolLink"
                         style="width: 80%;">
+                </div>
+
+                <div class="form-group">
+                    <label for="edit_prompt_imageLink">Image Link</label>
+                    <br />
+                    <input type="url" class="form-control" id="edit_prompt_imageLink" name="edit_prompt_imageLink"
+                           style="width: 80%;">
                 </div>
 
                 <div class="form-group">
@@ -222,6 +232,7 @@ function windesheim_prompt_libary_render_settings_page()
                 $('#edit_prompt_prompt').val(prompt.prompt);
                 $('#edit_prompt_tool').val(prompt.tool);
                 $('#edit_prompt_toolLink').val(prompt.toolLink);
+                $('#edit_prompt_imageLink').val(prompt.imageLink);
                 $('#edit_prompt_promptPattern').val(prompt.promptPattern);
                 $('#edit_prompt_sector').val(prompt.sector);
 
@@ -244,6 +255,7 @@ function windesheim_prompt_libary_render_settings_page()
                     'prompt_prompt': $('#edit_prompt_prompt').val(),
                     'prompt_tool': $('#edit_prompt_tool').val(),
                     'prompt_toolLink': $('#edit_prompt_toolLink').val(),
+                    'prompt_imageLink': $('#edit_prompt_imageLink').val(),
                     'prompt_promptPattern': $('#edit_prompt_promptPattern').val(),
                     'prompt_sector': $('#edit_prompt_sector').val()
                 };
@@ -282,6 +294,7 @@ function windesheim_prompt_libary_render_settings_page()
                 $('#edit_prompt_prompt').val('');
                 $('#edit_prompt_tool').val('');
                 $('#edit_prompt_toolLink').val('');
+                $('#edit_prompt_imageLink').val('');
                 $('#edit_prompt_promptPattern').val('');
                 $('#edit_prompt_sector').val('');
 

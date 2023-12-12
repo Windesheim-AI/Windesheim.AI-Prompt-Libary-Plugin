@@ -39,6 +39,7 @@ class WinPL_Activator
 			toolLink VARCHAR(255),
 			promptPattern INT,
 			sector INT,
+			imageLink TEXT,
 			PRIMARY KEY  (id),
 			FOREIGN KEY (promptPattern) REFERENCES $winPL_prompt_pattern_table(id),
 			FOREIGN KEY (sector) REFERENCES $winPL_sector_table(id)
