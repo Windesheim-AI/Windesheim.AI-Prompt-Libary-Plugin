@@ -66,7 +66,8 @@ class WinPL_Endpoints
     //     "tool": "ChatGPT",
     //     "toolLink": "https://www.openai.com/chatgpt",
     //     "promptPattern": "PersonaPattern",
-    //     "sector": "Education"
+    //     "sector": "Education",
+    //     "imageLink": "https://picsum.photos/200/300"
     // }
 
     public function get_prompts()
@@ -120,7 +121,7 @@ class WinPL_Endpoints
         //decode the request body
         $content = json_decode($request);
         //check if the request body contains all the required fields
-        if (!isset($content->title) || !isset($content->prompt) || !isset($content->description) || !isset($content->tool) || !isset($content->toolLink) || !isset($content->promptPattern) || !isset($content->sector)) {
+        if (!isset($content->title) || !isset($content->prompt) || !isset($content->description) || !isset($content->tool) || !isset($content->toolLink) || !isset($content->promptPattern) || !isset($content->sector) || !isset($content->imageLink)) {
             return new WP_REST_Response('Invalid data given!', 400);
         }
         //check if the prompt pattern and sector are valid
@@ -149,6 +150,7 @@ class WinPL_Endpoints
                 'toolLink' => $content->toolLink,
                 'promptPattern' => $prompt_pattern,
                 'sector' => $sector,
+                'imageLink' => $content->imageLink,
             ),
             array('%s', '%s', '%s', '%s', '%s', '%d', '%d')  // Adjust field types accordingly
         );

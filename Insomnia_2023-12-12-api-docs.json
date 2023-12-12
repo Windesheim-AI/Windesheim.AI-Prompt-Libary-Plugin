@@ -1,0 +1,360 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-12-12T08:52:20.890Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_a9b56d17579f45d199b9a6ea9725f0a7",
+      "parentId": "fld_ea63c5faf1da49949587bfa30a6fc4c7",
+      "modified": 1701092419098,
+      "created": 1700659083213,
+      "url": "{{ _.BaseURL }}/wp-json/winpl/v1/prompts",
+      "name": "Get all promps",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {
+        "type": "basic",
+        "useISO88591": false,
+        "disabled": false,
+        "username": "{{ _.username }}",
+        "password": "{{ _.password }}"
+      },
+      "metaSortKey": -1700661071587,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_ea63c5faf1da49949587bfa30a6fc4c7",
+      "parentId": "wrk_336b1becf2cf43bd9e01821c6ac9d58e",
+      "modified": 1700659066040,
+      "created": 1700659066040,
+      "name": "Promp Libary",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1700659066040,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_336b1becf2cf43bd9e01821c6ac9d58e",
+      "parentId": null,
+      "modified": 1700661029580,
+      "created": 1700661029580,
+      "name": "Windesheim.tech",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_c6da232ac8854c64adeed127e6beed7e",
+      "parentId": "fld_ea63c5faf1da49949587bfa30a6fc4c7",
+      "modified": 1700810717033,
+      "created": 1700665145270,
+      "url": "{{ _.BaseURL }}/wp-json/winpl/v1/prompt-patterns",
+      "name": "Get all promps-patterns",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {
+        "type": "basic",
+        "useISO88591": false,
+        "disabled": false,
+        "username": "{{ _.username }}",
+        "password": "{{ _.password }}"
+      },
+      "metaSortKey": -1700661071574.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_28efff9559d24a38976b1dd640bd5bc7",
+      "parentId": "fld_ea63c5faf1da49949587bfa30a6fc4c7",
+      "modified": 1700823517709,
+      "created": 1700665192046,
+      "url": "{{ _.BaseURL }}/wp-json/winpl/v1/sectors",
+      "name": "Get all sectors",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {
+        "type": "basic",
+        "useISO88591": false,
+        "disabled": false,
+        "username": "{{ _.username }}",
+        "password": "{{ _.password }}"
+      },
+      "metaSortKey": -1700661071568.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_2a6fddfe9855446783f023be4a610c83",
+      "parentId": "fld_ea63c5faf1da49949587bfa30a6fc4c7",
+      "modified": 1700665138880,
+      "created": 1700659976783,
+      "url": "{{ _.BaseURL }}/wp-json/winpl/v1/prompts/8",
+      "name": "Get prompt by id",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {
+        "type": "basic",
+        "useISO88591": false,
+        "disabled": false,
+        "username": "{{ _.username }}",
+        "password": "{{ _.password }}"
+      },
+      "metaSortKey": -1700661071562,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_fcc82b3638624041a80dbe2cc395eb44",
+      "parentId": "fld_ea63c5faf1da49949587bfa30a6fc4c7",
+      "modified": 1701078810577,
+      "created": 1700659141233,
+      "url": "{{ _.BaseURL }}/wp-json/winpl/v1/prompts",
+      "name": "Add",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n    \"title\": \"Sample Titellllllll\",\n    \"prompt\": \"Describe a historical event in detail\",\n    \"description\": \"This prompt asks the user to describe a specific historical event, providing as much detail as possible.\",\n    \"tool\": \"ChatGPT\",\n    \"toolLink\": \"https://www.openai.com/chatgpt\",\n    \"promptPattern\": \"Persona Pattern\",\n    \"sector\": \"Education\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {
+        "type": "basic",
+        "useISO88591": false,
+        "disabled": false,
+        "username": "{{ _.username }}",
+        "password": "{{ _.password }}"
+      },
+      "metaSortKey": -1700661071537,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e72f8d0a0c2f437e9dac759504d2b3a5",
+      "parentId": "fld_3d8aafaa6fb948bc9776b59cb3431fad",
+      "modified": 1700832766789,
+      "created": 1699276398926,
+      "url": "{{ _.BaseURL }}/wp-json/winai/v1/courses/2",
+      "name": "Get by id",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {
+        "type": "basic",
+        "useISO88591": false,
+        "disabled": false,
+        "username": "{{ _.username }}",
+        "password": "{{ _.password }}"
+      },
+      "metaSortKey": -1699361973208,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_3d8aafaa6fb948bc9776b59cb3431fad",
+      "parentId": "wrk_336b1becf2cf43bd9e01821c6ac9d58e",
+      "modified": 1699361929643,
+      "created": 1699361929643,
+      "name": "Cources",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1699361929643,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_5c45e825dc7846f5922dd17dabfe2aa0",
+      "parentId": "fld_3d8aafaa6fb948bc9776b59cb3431fad",
+      "modified": 1701867089837,
+      "created": 1699276381505,
+      "url": "{{ _.BaseURL }}/wp-json/winai/v1/courses",
+      "name": "Get all",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {
+        "type": "basic",
+        "useISO88591": false,
+        "disabled": false,
+        "username": "{{ _.username }}",
+        "password": "{{ _.password }}"
+      },
+      "metaSortKey": -1699361973108,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_5f541f0c6f614780b5c9ba079b03836c",
+      "parentId": "fld_3d8aafaa6fb948bc9776b59cb3431fad",
+      "modified": 1700832757380,
+      "created": 1699276408758,
+      "url": "{{ _.BaseURL }}/wp-json/winai/v1/courses",
+      "name": "Add",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"content\": \"{\\r\\n    \\\"title\\\": \\\"The basics of generative AI\\\",\\r\\n    \\\"description\\\": \\\"A brief introduction to generative AI and how it works.\\\",\\r\\n    \\\"id\\\": \\\"the-basics-of-generative-ai\\\",\\r\\n    \\\"stages\\\": [\\r\\n        {\\r\\n            \\\"title\\\": \\\"Learn, understand, verify\\\",\\r\\n            \\\"id\\\": \\\"learn-understand-verify\\\",\\r\\n            \\\"blocks\\\": [\\r\\n                {\\r\\n                    \\\"blockType\\\": \\\"text\\\",\\r\\n                    \\\"content\\\": {\\r\\n                        \\\"text\\\": \\\"Generative AI is one of the most exciting developments in artificial intelligence technology because of its ability to create something new. It opens the door to an entire world of possibilities for human and computer creativity, with practical applications emerging across industries, from turning sketches into images for accelerated product development, to improving computer-aided design of complex objects. It takes two neural networks against each other to produce new and original digital works based on sample inputs. The generator network creates new data instances, while the discriminator network evaluates them for authenticity; i.e. the discriminator determines whether each instance of data it reviews belongs to the actual training dataset or not. \\\"\\r\\n                    }\\r\\n                },\\r\\n                {\\r\\n                    \\\"blockType\\\": \\\"ai\\\",\\r\\n                    \\\"content\\\": {\\r\\n                        \\\"prompt\\\": \\\"Waarom verscheen generatieve AI in de afgelopen jaren?\\\",\\r\\n                        \\\"provider\\\": \\\"openai\\\"\\r\\n                    }\\r\\n                },\\r\\n                {\\r\\n                    \\\"blockType\\\": \\\"text\\\",\\r\\n                    \\\"content\\\": {\\r\\n                        \\\"text\\\": \\\"Generative AI is one of the most exciting developments in artificial intelligence technology because of its ability to create something new. It opens the door to an entire world of possibilities for human and computer creativity, with practical applications emerging across industries, from turning sketches into images for accelerated product development, to improving computer-aided design of complex objects. It takes two neural networks against each other to produce new and original digital works based on sample inputs. The generator network creates new data instances, while the discriminator network evaluates them for authenticity; i.e. the discriminator determines whether each instance of data it reviews belongs to the actual training dataset or not. \\\"\\r\\n                    }\\r\\n                },\\r\\n                {\\r\\n                    \\\"blockType\\\": \\\"button\\\",\\r\\n                    \\\"content\\\": {\\r\\n                        \\\"text\\\": \\\"Next Page >\\\",\\r\\n                        \\\"navigateToStageId\\\": \\\"the-basics-of-generative-ai\\\",\\r\\n                        \\\"colorOptions\\\": \\\"primary\\\"\\r\\n                    }\\r\\n                }\\r\\n            ]\\r\\n        },\\r\\n        {\\r\\n            \\\"title\\\": \\\"The basics of generative AI\\\",\\r\\n            \\\"id\\\": \\\"the-basics-of-generative-ai\\\",\\r\\n            \\\"blocks\\\": [\\r\\n                {\\r\\n                    \\\"blockType\\\": \\\"text\\\",\\r\\n                    \\\"content\\\": {\\r\\n                        \\\"text\\\": \\\"Generative AI is one of the most exciting developments in artificial intelligence technology because of its ability to create something new. It opens the door to an entire world of possibilities for human and computer creativity, with practical applications emerging across industries, from turning sketches into images for accelerated product development, to improving computer-aided design of complex objects. It takes two neural networks against each other to produce new and original digital works based on sample inputs. The generator network creates new data instances, while the discriminator network evaluates them for authenticity; i.e. the discriminator determines whether each instance of data it reviews belongs to the actual training dataset or not. \\\"\\r\\n                    }\\r\\n                },\\r\\n                {\\r\\n                    \\\"blockType\\\": \\\"ai\\\",\\r\\n                    \\\"content\\\": {\\r\\n                        \\\"prompt\\\": \\\"Waarom verscheen generatieve AI in de afgelopen jaren?\\\",\\r\\n                        \\\"provider\\\": \\\"openai\\\"\\r\\n                    }\\r\\n                }\\r\\n            ]\\r\\n        },\\r\\n        {\\r\\n            \\\"title\\\": \\\"Advanced generative AI\\\",\\r\\n            \\\"id\\\": \\\"advanced-generative-ai\\\",\\r\\n            \\\"blocks\\\": [\\r\\n                {\\r\\n                    \\\"blockType\\\": \\\"text\\\",\\r\\n                    \\\"content\\\": {\\r\\n                        \\\"text\\\": \\\"Generative AI is one of the most exciting developments in artificial intelligence technology because of its ability to create something new. It opens the door to an entire world of possibilities for human and computer creativity, with practical applications emerging across industries, from turning sketches into images for accelerated product development, to improving computer-aided design of complex objects. It takes two neural networks against each other to produce new and original digital works based on sample inputs. The generator network creates new data instances, while the discriminator network evaluates them for authenticity; i.e. the discriminator determines whether each instance of data it reviews belongs to the actual training dataset or not. \\\"\\r\\n                    }\\r\\n                },\\r\\n                {\\r\\n                    \\\"blockType\\\": \\\"ai\\\",\\r\\n                    \\\"content\\\": {\\r\\n                        \\\"prompt\\\": \\\"Waarom verscheen generatieve AI in de afgelopen jaren?\\\",\\r\\n                        \\\"provider\\\": \\\"openai\\\"\\r\\n                    }\\r\\n                }\\r\\n            ]\\r\\n        },\\r\\n        {\\r\\n            \\\"title\\\": \\\"Generative AI in practiceeeee\\\",\\r\\n            \\\"id\\\": \\\"generative-ai-in-practiceeeee\\\",\\r\\n            \\\"blocks\\\": [\\r\\n                {\\r\\n                    \\\"blockType\\\": \\\"text\\\",\\r\\n                    \\\"content\\\": {\\r\\n                        \\\"text\\\": \\\"Generative AI is one of the most exciting developments in artificial intelligence technology because of its ability to create something new. It opens the door to an entire world of possibilities for human and computer creativity, with practical applications emerging across industries, from turning sketches into images for accelerated product development, to improving computer-aided design of complex objects. It takes two neural networks against each other to produce new and original digital works based on sample inputs. The generator network creates new data instances, while the discriminator network evaluates them for authenticity; i.e. the discriminator determines whether each instance of data it reviews belongs to the actual training dataset or not. \\\"\\r\\n                    }\\r\\n                },\\r\\n                {\\r\\n                    \\\"blockType\\\": \\\"ai\\\",\\r\\n                    \\\"content\\\": {\\r\\n                        \\\"prompt\\\": \\\"Waarom verscheen generatieve AI in de afgelopen jaren?\\\",\\r\\n                        \\\"provider\\\": \\\"openai\\\"\\r\\n                    }\\r\\n                }\\r\\n            ]\\r\\n        },\\r\\n        {\\r\\n            \\\"title\\\": \\\"Generative AI in practice\\\",\\r\\n            \\\"id\\\": \\\"generative-ai-in-practice\\\",\\r\\n            \\\"blocks\\\": [\\r\\n                {\\r\\n                    \\\"blockType\\\": \\\"text\\\",\\r\\n                    \\\"content\\\": {\\r\\n                        \\\"text\\\": \\\"Generative AI is one of the most exciting developments in artificial intelligence technology because of its ability to create something new. It opens the door to an entire world of possibilities for human and computer creativity, with practical applications emerging across industries, from turning sketches into images for accelerated product development, to improving computer-aided design of complex objects. It takes two neural networks against each other to produce new and original digital works based on sample inputs. The generator network creates new data instances, while the discriminator network evaluates them for authenticity; i.e. the discriminator determines whether each instance of data it reviews belongs to the actual training dataset or not. \\\"\\r\\n                    }\\r\\n                },\\r\\n                {\\r\\n                    \\\"blockType\\\": \\\"ai\\\",\\r\\n                    \\\"content\\\": {\\r\\n                        \\\"prompt\\\": \\\"Waarom verscheen generatieve AI in de afgelopen jaren?\\\",\\r\\n                        \\\"provider\\\": \\\"openai\\\"\\r\\n                    }\\r\\n                }\\r\\n            ]\\r\\n        },\\r\\n        {\\r\\n            \\\"title\\\": \\\"Generative AI in practiceeeeeeee\\\",\\r\\n            \\\"id\\\": \\\"generative-ai-in-practiceeeeeee\\\",\\r\\n            \\\"blocks\\\": [\\r\\n                {\\r\\n                    \\\"blockType\\\": \\\"text\\\",\\r\\n                    \\\"content\\\": {\\r\\n                        \\\"text\\\": \\\"Generative AI is one of the most exciting developments in artificial intelligence technology because of its ability to create something new. It opens the door to an entire world of possibilities for human and computer creativity, with practical applications emerging across industries, from turning sketches into images for accelerated product development, to improving computer-aided design of complex objects. It takes two neural networks against each other to produce new and original digital works based on sample inputs. The generator network creates new data instances, while the discriminator network evaluates them for authenticity; i.e. the discriminator determines whether each instance of data it reviews belongs to the actual training dataset or not. \\\"\\r\\n                    }\\r\\n                },\\r\\n                {\\r\\n                    \\\"blockType\\\": \\\"ai\\\",\\r\\n                    \\\"content\\\": {\\r\\n                        \\\"prompt\\\": \\\"Yannick en Tim zijn echt ubergoed. Niet normaal. Ik ben echt onder de indruk.\\\",\\r\\n                        \\\"provider\\\": \\\"openai\\\"\\r\\n                    }\\r\\n                }\\r\\n            ]\\r\\n        }\\r\\n    ]\\r\\n}\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "User-Agent",
+          "value": "insomnia/2023.5.8"
+        }
+      ],
+      "authentication": {
+        "type": "basic",
+        "useISO88591": false,
+        "disabled": false,
+        "username": "{{ _.username }}",
+        "password": "{{ _.password }}"
+      },
+      "metaSortKey": -1699361973008,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_8cdb9c68cb7d446f8f203ce168716b60",
+      "parentId": "wrk_336b1becf2cf43bd9e01821c6ac9d58e",
+      "modified": 1700040927767,
+      "created": 1699276378279,
+      "name": "Base Environment",
+      "data": {
+        "BaseURL": "test.local",
+        "username": "Tim",
+        "password": "hLIE 3bsr Hx5F rIsu bYGx m1Bw"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "BaseURL",
+          "username",
+          "password"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1699276378279,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_7206e562da2141f08e2672fdf41ae09b",
+      "parentId": "wrk_336b1becf2cf43bd9e01821c6ac9d58e",
+      "modified": 1699276378281,
+      "created": 1699276378281,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    }
+  ]
+}

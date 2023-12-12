@@ -53,6 +53,10 @@ function winpl_edit_prompt()
     if ($prompt_sector == INVALID_INPUT) {
         wp_die('Invalid prompt sector!');
     }
+  $prompt_imageLink = ($_POST['prompt_imageLink'] ?? INVALID_INPUT);
+  if ($prompt_imageLink == INVALID_INPUT) {
+    wp_die('Invalid prompt image link!');
+  }
 
     global $wpdb;
     $winPL_prompt_table = $wpdb->prefix . 'winpl_prompt';
@@ -81,7 +85,8 @@ function winpl_edit_prompt()
             'tool' => $prompt_tool,
             'toolLink' => $prompt_toolLink,
             'promptPattern' => $promptPatternId,
-            'sector' => $sectorId
+            'sector' => $sectorId,
+            'imageLink' => $prompt_imageLink,
         ),
         array(
             'id' => $prompt_id
@@ -93,7 +98,8 @@ function winpl_edit_prompt()
             '%s',
             '%s',
             '%d',
-            '%d'
+            '%d',
+            '%d',
         ),
         array(
             '%d'
@@ -133,6 +139,10 @@ function winpl_add_prompt()
     if ($prompt_sector == INVALID_INPUT) {
         wp_die('Invalid prompt sector!');
     }
+  $prompt_imageLink = ($_POST['prompt_imageLink'] ?? INVALID_INPUT);
+  if ($prompt_imageLink == INVALID_INPUT) {
+    wp_die('Invalid prompt image link!');
+  }
 
     global $wpdb;
     $winPL_prompt_table = $wpdb->prefix . 'winpl_prompt';
@@ -161,7 +171,8 @@ function winpl_add_prompt()
             'tool' => $prompt_tool,
             'toolLink' => $prompt_toolLink,
             'promptPattern' => $promptPatternId,
-            'sector' => $sectorId
+            'sector' => $sectorId,
+            'imageLink' => $prompt_imageLink,
         ),
         array(
             '%s',
@@ -170,7 +181,8 @@ function winpl_add_prompt()
             '%s',
             '%s',
             '%d',
-            '%d'
+            '%d',
+            '%d',
         )
     );
 }
