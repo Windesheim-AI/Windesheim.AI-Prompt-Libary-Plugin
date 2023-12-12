@@ -182,7 +182,7 @@ function winpl_add_prompt()
             '%s',
             '%d',
             '%d',
-            '%d',
+            '%s',
         )
     );
 }
