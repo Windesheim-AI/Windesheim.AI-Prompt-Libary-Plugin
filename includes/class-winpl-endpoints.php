@@ -152,7 +152,7 @@ class WinPL_Endpoints
                 'sector' => $sector,
                 'imageLink' => $content->imageLink,
             ),
-            array('%s', '%s', '%s', '%s', '%s', '%d', '%d')  // Adjust field types accordingly
+            array('%s', '%s', '%s', '%s', '%s', '%d', '%s')  // Adjust field types accordingly
         );
         //return the new prompt
         $prompt_id = (int) $wpdb->insert_id;

@@ -99,7 +99,7 @@ function winpl_edit_prompt()
             '%s',
             '%d',
             '%d',
-            '%d',
+            '%s',
         ),
         array(
             '%d'
