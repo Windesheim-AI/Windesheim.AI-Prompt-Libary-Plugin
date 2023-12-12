@@ -110,7 +110,7 @@ function windesheim_prompt_libary_render_settings_page()
                         <td class="sector column-sector" data-colname="Sector">
                             <?php echo $prompt->sector; ?>
                         </td>
-                        <td class="imageLink column-imageLink" data-colname="Sector">
+                        <td class="imageLink column-imageLink" data-colname="ImageLink">
                           <?php echo $prompt->imageLink; ?>
                         </td>
                     </tr>
