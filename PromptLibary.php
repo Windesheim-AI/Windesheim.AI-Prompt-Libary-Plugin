@@ -7,7 +7,7 @@
  * Description: Windesheim Prompt Libary 
  * Author: Windesheim
  * Author URI: https://windesheim.tech/
- * Version: 1.0.3
+ * Version: 1.0.4
  * Text Domain: windesheim-prompt-libary
  * Requires at least: 6.2
  * Tested up to: 6.4
@@ -122,4 +122,27 @@ function winpl_enqueue_admin_scripts()
     wp_enqueue_script('jquery-ui-sortable');
 }
 
+function winpl_add_rewrite_rules()
+{
+    add_rewrite_rule('^prompts/?', 'index.php?prompts_page=true', 'top');
+}
+add_action('init', 'winpl_add_rewrite_rules');
+
+
+function winpl_query_vars($vars)
+{
+    $vars[] = 'prompts_page';
+    return $vars;
+}
+add_filter('query_vars', 'winpl_query_vars');
+
 add_action('admin_enqueue_scripts', 'winpl_enqueue_admin_scripts');
+
+function winpl_template_include($template)
+{
+    if (get_query_var('prompts_page')) {
+        return plugin_dir_path(__FILE__) . 'pages/prompts-page.php';
+    }
+    return $template;
+}
+add_filter('template_include', 'winpl_template_include');
