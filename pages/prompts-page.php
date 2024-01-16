@@ -27,8 +27,18 @@ $prompts = get_prompts();
                 <style>
                     table {
                         width: 100%;
+                        max-width: 100%;
+                        overflow-x: auto;
                         border-collapse: collapse;
                         margin-bottom: 20px;
+                    }
+
+                    @media (max-width: 767px) {
+                        table {
+                            display: block;
+                            overflow-x: auto;
+                            white-space: nowrap;
+                        }
                     }
 
                     #primary {
@@ -56,32 +66,59 @@ $prompts = get_prompts();
                     img.prompt-image {
                         width: 50px;
                     }
+
+                    .copy-button {
+                        position: absolute;
+                        right: 0;
+                        cursor: pointer;
+                        background-color: #112A46;
+                        color: white;
+                        padding: 6px 12px;
+                        border-radius: 4px;
+                        color: white;
+                        border: none;
+                        text-align: center;
+                        display: inline-block;
+                        font-size: 14px;
+                        margin: 2px;
+                    }
                 </style>
 
                 <table>
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>Tool Link </th>
                             <th>Titel</th>
                             <th>Prompt</th>
                             <th>Beschrijving</th>
                             <th>Tool</th>
                             <th>Prompt Pattern</th>
                             <th>Sector</th>
+                            <th></th>
+                            <th>Tool Link </th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($prompts as $prompt) : ?>
-                            <tr>
-                                <td><img class="prompt-image" src="<?php echo $prompt->imageLink; ?>" alt="Image"></td>
-                                <td><a href="<?php echo $prompt->toolLink; ?>" target="_blank">Probeer hem nu ></a></td>
-                                <th><?php echo $prompt->title; ?></th>
-                                <td><?php echo str_replace('\\', '', $prompt->prompt); ?></td>
-                                <td><?php echo str_replace('\\', '', $prompt->description); ?></td>
-                                <td><?php echo $prompt->tool; ?></td>
-                                <td><?php echo $prompt->promptPattern; ?></td>
-                                <td><?php echo $prompt->sector; ?></td>
+                            <tr id="<?php echo $prompt->id; ?>">
+                                <td width="16%"><?php echo $prompt->title; ?></td>
+                                <td width="30%">
+                                    <div>
+                                        <?php echo str_replace('\\', '', $prompt->prompt); ?>
+                                        <button class="copy-button" onclick="copyToClipboard('<?php echo str_replace('\\', '', $prompt->prompt); ?>')">Copy</button>
+                                    </div>
+                                </td>
+                                <td width="20%"><?php echo str_replace('\\', '', $prompt->description); ?></td>
+                                <td width="9%">
+                                    <?php
+                                    if (!empty($prompt->imageLink)) {
+                                        echo "<img class='prompt-image' src=" . $prompt->imageLink . " alt='Image'>";
+                                    }
+                                    echo $prompt->tool;
+                                    ?>
+                                </td>
+                                <td width="9%"><?php echo $prompt->promptPattern; ?></td>
+                                <td width="9%"><?php echo $prompt->sector; ?></td>
+                                <td width="9%"><a href="<?php echo $prompt->toolLink; ?>" target="_blank">Probeer het zelf ></a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -90,5 +127,25 @@ $prompts = get_prompts();
         </article>
     </main>
 </div>
+
+<script>
+    // scroll to right prompt id
+    const urlParams = new URLSearchParams(window.location.search);
+    const promptId = urlParams.get('id');
+    if (promptId) {
+        const element = document.getElementById(promptId);
+        element.scrollIntoView();
+        element.style.backgroundColor = '#ffff00';
+    }
+
+    function copyToClipboard(text) {
+        const el = document.createElement('textarea');
+        el.value = text;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+    }
+</script>
 
 <?php get_footer(); ?>
