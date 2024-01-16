@@ -77,8 +77,8 @@ $prompts = get_prompts();
                                 <td><img class="prompt-image" src="<?php echo $prompt->imageLink; ?>" alt="Image"></td>
                                 <td><a href="<?php echo $prompt->toolLink; ?>" target="_blank">Probeer hem nu ></a></td>
                                 <th><?php echo $prompt->title; ?></th>
-                                <td><?php echo $prompt->prompt; ?></td>
-                                <td><?php echo $prompt->description; ?></td>
+                                <td><?php echo str_replace('/', '', $prompt->prompt); ?></td>
+                                <td><?php echo str_replace('/', '', $prompt->description); ?></td>
                                 <td><?php echo $prompt->tool; ?></td>
                                 <td><?php echo $prompt->promptPattern; ?></td>
                                 <td><?php echo $prompt->sector; ?></td>
